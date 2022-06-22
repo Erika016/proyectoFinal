@@ -19,9 +19,17 @@ class ExercisesController {
   allExercises(req, res) {
     dbMysql.query(
       "SELECT * FROM exercises ORDER BY name",
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -42,10 +50,17 @@ class ExercisesController {
     dbMysql.query(
       "SELECT * FROM exercises where name LIKE ?",
       [termino],
-      (err, rows, next) => {
-        if (err) console.log(err);
-        console.log(rows);
-        res.json(rows);
+      (error, rows, next) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -71,10 +86,17 @@ class ExercisesController {
     dbMysql.query(
       "SELECT * FROM max_weith id_exercise = ? and id_User LIKE ?",
       [id_exerise, id_User],
-      (err, rows, next) => {
-        if (err) console.log(err);
-        console.log(rows);
-        res.json(rows);
+      (error, rows, next) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -95,9 +117,17 @@ class ExercisesController {
     dbMysql.query(
       "DELETE FROM weith WHERE id_weith = ?",
       [id_weith],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
 
@@ -129,9 +159,17 @@ class ExercisesController {
     dbMysql.query(
       'INSERT INTO Pesos (id_User, id_exercise, date, weith) VALUES (?, ?, ?, ?)',
       [id_User, id_exerise, date, weith],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }

@@ -25,11 +25,25 @@ class UserController {
     const {
       email
     } = req.body;
+    const {
+      password
+    } = req.body;
+    const {
+      rol
+    } = req.body;
     dbMysql.query(
-      'INSERT INTO users (id_User, name, email) VALUES (?, ?, ?)', [id_User, name, email],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      'INSERT INTO users (id_User, name, email, password, rol) VALUES (?, ?, ?, ?, ?)', [id_User, name, email, password, rol],
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -60,9 +74,17 @@ class UserController {
     const {
       email
     } = req.body;
-    dbMysql.query("UPDATE users SET name = ?, last_name = ?, phone = ?,email = ? WHERE id_User = ?", [name, last_name, phone, email, id_User], (err, rows) => {
-      if (err) console.log(err);
-      res.json(rows);
+    dbMysql.query("UPDATE users SET name = ?, last_name = ?, phone = ?,email = ? WHERE id_User = ?", [name, last_name, phone, email, id_User], (error, rows) => {
+      if (error) console.log({
+        status: 'failed',
+        data: rows,
+        error: error.message
+      });
+      res.json({
+        status: 'succedeed',
+        data: rows,
+        error: null
+      });
     });
   }
 
@@ -79,8 +101,8 @@ class UserController {
       id_User
     } = req.params;
     const photo = req.body.photoUrl;
-    db.query("UPDATE users SET photo = ? WHERE id_User = ?", [photo, id_User], (err, rows) => {
-      if (err) console.log(err);
+    db.query("UPDATE users SET photo = ? WHERE id_User = ?", [photo, id_User], (error, rows) => {
+      if (error) console.log(error);
       res.send("Okay!");
     });
   }
@@ -102,8 +124,16 @@ class UserController {
       "SELECT * FROM users WHERE id_User = ?",
       [id_User],
       (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+       if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -150,9 +180,17 @@ class UserController {
     dbMysql.query(
       "SELECT rol FROM users WHERE id_User = ?",
       [id_User],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -172,9 +210,17 @@ class UserController {
     dbMysql.query(
       "SELECT * FROM users where name LIKE ?",
       [termino],
-      (err, rows, next) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows, next) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -197,9 +243,17 @@ class UserController {
     } = req.body;
     dbMysql.query(
       'UPDATE users SET situacion = ? WHERE id_User = ?', [situation, id_User],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -222,9 +276,17 @@ class UserController {
     } = req.body;
     dbMysql.query(
       'UPDATE users SET rol = ? WHERE id_User = ?', [rol, id_User],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -244,9 +306,17 @@ class UserController {
     dbMysql.query(
       "SELECT * FROM users where email LIKE ?",
       [email],
-      (err, rows, next) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows, next) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -269,9 +339,17 @@ class UserController {
     console.log("esta es la foto que llega aki", photo)
     dbMysql.query(
       'UPDATE users SET photo = ? WHERE id_User = ?', [photo, id_User],
-      (err, rows) => {
-        if (err) console.log(err);
-        res.json(rows);
+      (error, rows) => {
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }

@@ -20,8 +20,16 @@ class ClassController {
       "UPDATE users SET clases = clases+? WHERE id_User = ?",
       [numClass, id_User],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -44,8 +52,16 @@ class ClassController {
       "INSERT INTO schedule (dia, hora, typClase) VALUES (?, ?, ?)",
       [dia, hora, typClase],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -65,8 +81,16 @@ class ClassController {
       "SELECT * FROM schedule WHERE dia = ? ORDER BY hora",
       [dia],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -86,8 +110,16 @@ class ClassController {
       "SELECT R.id_booking, u.name, u.photo, u.id_User FROM bookings R JOIN users u ON(R.id_User = u.id_User) WHERE id_schedule = ?",
       [id],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -108,8 +140,16 @@ class ClassController {
       "INSERT INTO bookings (id_User, id_schedule) VALUES (?, ?)",
       [id_User, id_schedule],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -130,8 +170,16 @@ class ClassController {
       "UPDATE users SET clases = clases-? WHERE id_User = ?",
       [numClass, id_User],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -151,8 +199,16 @@ class ClassController {
       "DELETE FROM bookings WHERE id_User = ? and id_schedule = ?",
       [id_User, id_schedule],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -173,9 +229,16 @@ class ClassController {
       "SELECT H.hora FROM schedule H JOIN bookings R ON (H.id_schedule = R.id_schedule) WHERE H.dia = ? AND R.id_User = ? ORDER BY H.hora",
       [dia, id_User],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
-        console.log("llego a tener respuesta");
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -195,8 +258,16 @@ class ClassController {
       "DELETE FROM schedule WHERE id_schedule = ?",
       [id_schedule],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }
@@ -217,9 +288,16 @@ class ClassController {
       "UPDATE schedule SET numPersonas = ? WHERE id_schedule = ?",
       [numPersonas, id_schedule],
       (error, rows) => {
-        if (error) console.log(error);
-        res.json(rows);
-        console.log("parece k lo hace");
+        if (error) console.log({
+          status: 'failed',
+          data: rows,
+          error: error.message
+        });
+        res.json({
+          status: 'succedeed',
+          data: rows,
+          error: null
+        });
       }
     );
   }

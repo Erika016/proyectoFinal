@@ -1,6 +1,11 @@
 // Desde App.js voy a exportar todas las const y las rutas que voy a utilizar con frecuencia en el proyecto de Back_End
 // From App.js I am going to export all the consts that I am going to use frequently in the Back_End project
 
+// lineas 5.6.7 son pruebas
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
+// const { verifyRefreshToken, generateToken } = require("../lib/utils");
+
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -13,8 +18,8 @@ const bodyParser = require("body-parser");
 
 const userRouter = require("./routes/userRouter");
 const classRouter = require("./routes/classRouter");
-
 const exercisesRouter = require("./routes/exercisesRouter");
+
 
 const app = express();
 
