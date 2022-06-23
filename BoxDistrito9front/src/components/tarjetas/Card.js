@@ -1,6 +1,5 @@
 import "./Card.css";
 import {Link } from "react-router-dom";
-import Modal from 'react-modal';
 import { Fragment } from "react";
 export function Card (props){
     return(
