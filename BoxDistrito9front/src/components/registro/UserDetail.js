@@ -1,21 +1,32 @@
-// import { useContext, useState } from "react";
-// import { Navigate } from "react-router-dom";
-// import{AuthContext} from "../registro/AuthContext"
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
-// cosnt [,]=useState();
-// export const UsersId=()=>{
-//     e.preventDefault();
-//     fetch("http://localhost:8000/users/userProfile/:id_User", {
-//   method: "POST",
-//   body: JSON.stringify(formValues),
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// })
-//   .then((res) => res.json())
-//   .then((data) => {
-//     setUsers(data.Users);
-//   });
-// };
+// DETALLES DEL USUARIO
 
-//
+export function UserDetails() {
+  const { id } = useParams();
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    // fetch(`https://`)
+      .then((res) => res.json())
+      .then((data) => setUser(data.data));
+  }, [id]);
+
+  return (
+    <div>
+      {user ? (
+        <div key={user.id}>
+          <p>{user.email}</p>
+          <p>
+            {user.first_name} {user.last_name}
+          </p>
+          <img width={64} height={64} src={user.avatar} />
+          <Link to={`/users/${user.id}`}>Ver detalle</Link>
+        </div>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </div>
+  );
+}

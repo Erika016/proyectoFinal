@@ -5,7 +5,7 @@
 // Inicio sesion
 // registro
 // Icono Redes sociales
-import { oulet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 
 export function Navegador() {

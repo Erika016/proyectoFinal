@@ -1,26 +1,31 @@
 import { useContext, useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
-import {AuthContext} from "../registro/AuthContext";
-export const Login=() =>{
-    const navigate= useNavigate();
-    const{token, setToken} =useContext(AuthContext);
-    const [formValues, setFormValues] = useState({email:"", password:""});
-    const handleInputChange= (e) =>{
-        setFormValues((prev)=>({...prev, [e.target.name]: e.target.value}));
-    }
-    const handleSubmit =(e) =>{
-        e.preventDefault();
-        fetch("http://localhost:8000/users/insertUser", {
+import { AuthContext } from "../components/registro/Login";
+
+export const Login = () => {
+  const navigate = useNavigate();
+  const { referral } = useContext(AuthContext);
+  const { token, setToken } = useContext(AuthContext);
+  const [formValues, setFormValues] = useState({ email: "", password: "" });
+
+  const handleInputChange = (e) => {
+    setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://reqres.in/api/login", {
       method: "POST",
       body: JSON.stringify(formValues),
       headers: {
+        Authorization: "Bearer " + token,
         "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
       .then((data) => {
         setToken(data.token);
-        navigate("/", { replace: true });
+        navigate(referral ? referral : "/", { replace: true });
       });
   };
 
