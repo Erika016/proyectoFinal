@@ -1,10 +1,10 @@
 // import { Routes, Route, Navigate } from "react-router-dom";
-// import { UserDetails } from "./pages/UserDetails";
-// import { Dashboard } from "./pages/Dashboard";
-// import { Login } from "./pages/Login";
-// import { NotFound } from "./pages/NotFound";
-// import { Register } from "./pages/Register";
-// import { Users } from "./pages/Users";
+// import { UserDetails } from "../registro/UserDetails";
+// import { Dashboard } from "../registro/Dashboard";
+// import { Login } from "../registro/Login";
+// import { NotFound } from "../registro/NotFound";
+// import { Register } from "../registro/Register";
+// import { Users } from "../resgistro/Users";
 
 // function RoutersRegistro() {
 //   return (

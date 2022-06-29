@@ -1,22 +1,24 @@
 import "./App.css";
 // import{SectionBoxeo, SectionCrosstif, SectionFisio} from "./sectionBoxeo/SectionCrosstif/SectionFisio"
-import { Routes, Route, MemoryRouter, } from "react-router-dom";
-import SectionCrossfit from "./components/tarjetas/SectionCrossfit";
-import SectionBoxeo from "./components/tarjetas/SectionBoxeo";
-import SectionFisio from "./components/tarjetas/SectionFisio";
+import { Routes, Route } from "react-router-dom";
+import Crossfit from "./components/actividades/Crossfit";
+import Boxeo from "./components/actividades/Boxeo"
+import Fisio from "./components/actividades/Fisio"
 import Home from "./components/inicio/Home";
 import { Fragment } from "react";
+import { Navegador } from "./components/nav/Navegador";
 // import Card from "./components/tarjetas/Card";
 
 function App() {
   return (
     <Fragment>
+      <Navegador></Navegador>
        <Routes>
         {/*  Ruta de App con las card anidadas de las secciones */}
-        <MemoryRouter path="/" component={Home} />
-        <Route path="/sectionCrossfit" element={SectionCrossfit} />
-        <Route path="/sectionBoxeo" element={SectionBoxeo} />
-        <Route path="/sectionFisio" element={SectionFisio} />
+        <Route index  element={Home} />
+        <Route path="/Crossfit" element={Crossfit} />
+        <Route path="/Boxeo" element={Boxeo} />
+        <Route path="/Fisio" element={Fisio} />
         {/* <Route path="/card" element={Card} /> */}
 
        </Routes>
