@@ -1,4 +1,5 @@
 const dbMysql = require("../database/db");
+const bcrypt = require("bcryptjs");
 
 /**
  * @class UserController
@@ -15,7 +16,6 @@ class UserController {
    */
 
   insertUser(req, res) {
-    const { id_User } = req.body;
     const { name } = req.body;
     const { last_name } = req.body;
     const { birth_date } = req.body;
@@ -25,9 +25,10 @@ class UserController {
     const { photo } = req.body;
     const { rol } = req.body;
     const { password } = req.body;
+    // const password =  bcrypt.hash(req.body.password, 8);
     dbMysql.query(
-      "INSERT INTO users (id_User, name, last_name, birth_date, email,  sessions, photo, rol, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-      [id_User, name, last_name, birth_date, phone, email, sessions, photo, rol, password],
+      "INSERT INTO users (name, last_name, birth_date, phone, email, sessions, photo, rol, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [name, last_name, birth_date, phone, email, sessions, photo, rol, password],
       (error, rows) => {
         if (error)
           console.log({

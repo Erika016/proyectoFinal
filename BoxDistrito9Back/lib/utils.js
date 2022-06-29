@@ -12,7 +12,7 @@ const verifyToken = (req, res, next) => {
   if (token == null) {
     res.status(400).json({ status: "failed", error: "token not found" });
   }
-  jwt.verify(token, process.env.SECRET, (err, payload) => {
+  jwt.verify(token, 'process.env.SECRET', (err, payload) => {
     if (err) {
       res.status(403).json({ status: "failed", error: "token does't match" });
     } else {
@@ -34,7 +34,7 @@ const verifyRefreshToken = (req, res, next) => {
   if (token == null) {
     res.status(400).json({ status: "failed", error: "token not found" });
   }
-  jwt.verify(token, process.env.REFRESH_SECRET, (err, payload) => {
+  jwt.verify(token, 'process.env.REFRESH_SECRET', (err, payload) => {
     if (err) {
       res.status(403).json({ status: "failed", error: "token does't match" });
     } else {
@@ -46,12 +46,12 @@ const verifyRefreshToken = (req, res, next) => {
 
 const generateToken = (payload, refresh = false) => {
   if (refresh) {
-    return jwt.sign({ role: payload[0].role }, process.env.REFRESH_SECRET, {
+      return jwt.sign({ email: payload[0].email }, 'process.env.REFRESH_SECRET', {
       expiresIn: "3m",
     });
   } else {
-    return jwt.sign({ role: payload[0].role }, process.env.SECRET, {
-      expiresIn: "1m",
+      return jwt.sign({ email: payload[0].email }, 'process.env.SECRET', {
+      expiresIn: "10m",
     });
   }
 };

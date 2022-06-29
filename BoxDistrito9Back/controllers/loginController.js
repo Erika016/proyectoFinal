@@ -1,5 +1,7 @@
 const dbMysql = require("../database/db");
 const jwt = require("jsonwebtoken");
+const { generateToken } = require("../lib/utils");
+
 
 
 /**
@@ -18,32 +20,37 @@ class LoginController {
    */
 
      login(req, res) {
-      const user = {
-        name: "Rosa",
-        email: "rosa@gmail.com",
-        id: 100,
-      };
-      
-      jwt.sign({user}, 'secretKey', {expiresIn: '24h'}, (err, token) => {
-        res.json({
-          token,
-        });
+    const pass = `${req.body.password}`;
+    const email = `${req.body.email}`;
+    console.log(email);
+      dbMysql.query("SELECT * FROM users where email LIKE ?",
+      [email], (error, rows) => {
+        if (error)
+          console.log({
+            status: "failed",
+            data: rows,
+            error: error.message,
+          });
+          if (rows.length > 0) {
+            if(pass === rows[0].password){
+              res.status(200).json({
+                status: "success",
+                token: generateToken(rows, false),
+                refresh_token: generateToken(rows, true),
+                error: error || null,
+              });
+            }else {
+              res
+              .status(200)
+              .json({ message: "incorrect username or password" });
+            }
+          } else {
+            res
+              .status(200)
+              .json({ message: "incorrect username or password" });
+          }
       });
     }
-
-protected(req, res) {
-  jwt.verify(req.token, 'secretKey', (err, data) =>{
-    if(err){
-      res.sendStatus(403);
-    } else {
-      res.json({
-        mensaje: 'protected',
-        data
-      })
-    }
-  })
-}
-
 }
 
 module.exports = LoginController = new LoginController();

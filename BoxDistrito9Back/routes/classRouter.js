@@ -1,46 +1,48 @@
 const express = require('express');
 const router = express.Router();
 const controlador = require('../controllers/classControllers');
+const { verifyToken } = require("../lib/utils");
+
 
 //Add extra classes
 //Añadir clases extras
-router.post('/addClass',controlador.addClass);
+router.post('/addClass', verifyToken,controlador.addClass);
 
 
 //Add classes to the day
 //Añadir clases al día
-router.post('/addHoursClass',controlador.addHoursClass);
+router.post('/addHoursClass', verifyToken,controlador.addHoursClass);
 
 //Show day classes
 //Mostrar clases día
-router.get('/classOneDay/:dia',controlador.classOneDay);
+router.get('/classOneDay/:dia', verifyToken,controlador.classOneDay);
 
 //Show reservations according to time
 //Mostrar reservas según la hora
-router.get('/allReserves/:id_schedule',controlador.allReserves);
+router.get('/allReserves/:id_schedule', verifyToken,controlador.allReserves);
 
 //Add classes to the day
 //Añadir clases al día
-router.post('/addReserv',controlador.addReserv);
+router.post('/addReserv', verifyToken,controlador.addReserv);
 
 //Add extra classes
 //Añadir clases extras
-router.post('/removeClass',controlador.removeClass);
+router.post('/removeClass', verifyToken,controlador.removeClass);
 
 //Añadir clases al día
-router.post('/deleteReserv',controlador.deleteReserv);
+router.post('/deleteReserv', verifyToken,controlador.deleteReserv);
 
 //Add classes to the day
 //listar clases del usuario en un día
-router.get('/allReserverUserDay/:fechaHorario/:UID',controlador.allReserverUserDay);
+router.get('/allReserverUserDay/:fechaHorario/:UID', verifyToken,controlador.allReserverUserDay);
 
 //Remove a class
 //Eliminar una clase
-router.delete('/deleteClass/:idHorario',controlador.deleteClass);
+router.delete('/deleteClass/:idHorario', verifyToken,controlador.deleteClass);
 
 //Add classes to the day
 //Añadir clases al día
-router.put('/updatePerClass',controlador.updatePerClass);
+router.put('/updatePerClass', verifyToken,controlador.updatePerClass);
 
 
 

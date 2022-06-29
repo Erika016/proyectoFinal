@@ -54,7 +54,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //rutas a seguir por el controlador
 //routes to be followed by the controller
 
-app.use("/login", loginRouter);
+app.use("/", loginRouter);
 app.use("/users", userRouter);
 app.use("/class", classRouter);
 app.use("/exercises", exercisesRouter);
