@@ -1,28 +1,31 @@
-import "./App.css";
-// import{SectionBoxeo, SectionCrosstif, SectionFisio} from "./sectionBoxeo/SectionCrosstif/SectionFisio"
-import { Routes, Route } from "react-router-dom";
-import Crossfit from "./components/actividades/Crossfit";
-import Boxeo from "./components/actividades/Boxeo"
-import Fisio from "./components/actividades/Fisio"
-import Home from "./components/inicio/Home";
-import { Fragment } from "react";
-import { Navegador } from "./components/nav/Navegador";
-// import Card from "./components/tarjetas/Card";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./Registro/Home";
+import { Login } from "./Registro/Login";
+import { Dashboard } from "./Registro/Dashboard";
+import { NotFound } from "./Registro/NotFound";
+import { Register } from "./Registro/Register";
+import { Users } from "./Registro/Users";
+import {UserDetails} from "./Registro/UserDetails"
+import {Exercises} from "./components/datos/Exercises"
 
 function App() {
   return (
-    <Fragment>
-      <Navegador></Navegador>
-       <Routes>
-        {/*  Ruta de App con las card anidadas de las secciones */}
-        <Route index  element={Home} />
-        <Route path="/Crossfit" element={Crossfit} />
-        <Route path="/Boxeo" element={Boxeo} />
-        <Route path="/Fisio" element={Fisio} />
-        {/* <Route path="/card" element={Card} /> */}
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/register" element={<Register />} />
+      <Route path=":exercises" element={<Exercises />}></Route>
 
-       </Routes>
-    </Fragment>
+      <Route path="/users">
+        <Route index element={<Users />} />
+        <Route path=":id_User" element={<UserDetails />} />
+      </Route>
+
+      <Route path="/404" element={<NotFound />} />
+      <Route path="*" element={<Navigate to="404" replace />} />
+    </Routes>
   );
 }
-export default App();
+
+export default App;

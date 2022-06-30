@@ -50,8 +50,8 @@ router.put('/modifyRolUser', verifyToken ,controlador.modifyRolUser);
 
 router.get('/searchEmail/:email', verifyToken , controlador.searchEmail);
 
-//Modificar rol del usuario
-//Modify user role
+//Modificar foto del usuario
+//Modify user photo
 router.put('/updatePhoto', verifyToken ,controlador.updatePhoto);
 
 

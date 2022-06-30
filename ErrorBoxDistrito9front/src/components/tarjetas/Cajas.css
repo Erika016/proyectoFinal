@@ -1,0 +1,27 @@
+.container {
+    border: 1px solid gray;
+    margin: 3em;
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+
+.image {
+    width: 286px;
+    height: 180px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.container-informacion {
+    padding: 16px;
+    text-align: center;
+}
+
+.boton {
+    background-color: #d2d2d2;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+}
