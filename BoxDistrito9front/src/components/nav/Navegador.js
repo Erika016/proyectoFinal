@@ -29,8 +29,8 @@ function Navegador() {
         <Link style={{margin:"1em", color:"white"}} to="/">Tarifa y Horarios</Link>
         <Link style={{margin:"1em", color:"white"}} to="/">Actividades</Link>
         <Link style={{margin:"1em", color:"white"}} to="/">Contacto</Link>
-        <Link style={{margin:"1em", color:"white"}} to={`/login/${Login}`}>Iniciar sesión</Link>
-        <Link style={{margin:"1em", color:"white"}} to={`/insertUser/${Register}`}>Registrarse</Link>
+        <Link style={{margin:"1em", color:"white"}} to={"/login"}>Iniciar sesión</Link>
+        <Link style={{margin:"1em", color:"white"}} to={"/register"}>Registrarse</Link>
         <div>
         <ImFacebook2/>
         <ImInstagram/>
