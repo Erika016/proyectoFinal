@@ -9,7 +9,7 @@ const { verifyToken } = require("../lib/utils");
 //Insertar nuevo usuario
 //Insert new user
 
-router.post('/insertUser',controlador.insertUser);
+router.post('/insertUser', controlador.insertUser);
 
 //Modificar un usuario
 //Modify a user

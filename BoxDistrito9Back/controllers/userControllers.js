@@ -15,18 +15,17 @@ class UserController {
    * @memberof UserController
    */
 
-  insertUser(req, res) {
-    const { name } = req.body;
-    const { last_name } = req.body;
-    const { birth_date } = req.body;
-    const { phone } = req.body;
-    const { email } = req.body;
-    const { sessions } = req.body;
-    const { photo } = req.body;
-    const { rol } = req.body;
-    const { password } = req.body;
-    // const password =  bcrypt.hash(req.body.password, 8);
-    dbMysql.query(
+   async insertUser(req, res) {
+    const name = req.body.name;
+    const last_name = req.body.last_name;
+    const birth_date = req.body.birth_date;
+    const phone = req.body.phone;
+    const email = req.body.email;
+    const sessions = req.body.sessions;
+    const photo = req.body.photo;
+    const rol = req.body.rol;
+    const password  = await bcrypt.hash(req.body.password, 10);
+     dbMysql.query(
       "INSERT INTO users (name, last_name, birth_date, phone, email, sessions, photo, rol, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [name, last_name, birth_date, phone, email, sessions, photo, rol, password],
       (error, rows) => {

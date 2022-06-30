@@ -1,7 +1,7 @@
 const dbMysql = require("../database/db");
 const jwt = require("jsonwebtoken");
 const { generateToken } = require("../lib/utils");
-
+const bcrypt = require("bcryptjs");
 
 
 /**
@@ -32,18 +32,26 @@ class LoginController {
             error: error.message,
           });
           if (rows.length > 0) {
-            if(pass === rows[0].password){
-              res.status(200).json({
-                status: "success",
-                token: generateToken(rows, false),
-                refresh_token: generateToken(rows, true),
-                error: error || null,
-              });
-            }else {
-              res
-              .status(200)
-              .json({ message: "incorrect username or password" });
-            }
+            bcrypt.compare(
+              pass,
+              rows[0].password,
+              (error, response) => {
+                if (error) {
+                  res.status(500).json({ message: error.message });
+                } else if (response) {
+                  res.status(200).json({
+                    status: "success",
+                    token: generateToken(rows, false),
+                    refresh_token: generateToken(rows, true),
+                    error: error || null,
+                  });
+                } else {
+                  res
+                    .status(200)
+                    .json({ message: "incorrect username or password" });
+                }
+              }
+            );
           } else {
             res
               .status(200)
