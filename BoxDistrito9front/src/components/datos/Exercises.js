@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+//Mostrar ejercicios
+//Show exercises
 export function Exercises() {
   const [exercises, setExercises] = useState([]);
 

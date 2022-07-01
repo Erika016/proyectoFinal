@@ -1,0 +1,40 @@
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px 5px rgba(150, 150, 150, 0.1);
+  border: 1px solid #b2b2b2;
+}
+.formulario {
+  padding: 8px 4px;
+  border: 1px solid #b2b2b2;
+  border-radius: 4px;
+  margin-bottom: 32px;
+  background-color: aqua;
+}
+.titulo {
+  font-size: 14px;
+  margin: 8px;
+}
+.registro {
+  margin-bottom: 32px;
+}
+.click {
+  text-decoration: none;
+  border: 2px solid gray;
+}
+
+.button {
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background-color: darkgray;
+  border: none;
+  color: black;
+  font-weight: bold;
+}

@@ -11,8 +11,6 @@ import { Link } from "react-router-dom";
 import { ImFacebook2 } from "react-icons/im";
 import { ImInstagram } from "react-icons/im";
 import { ImWhatsapp } from "react-icons/im";
-import { Login } from "../../Registro/Login";
-import { Register } from "../../Registro/Register";
 function Navegador() {
   return (
     <div>
@@ -31,6 +29,9 @@ function Navegador() {
         <Link style={{margin:"1em", color:"white"}} to="/">Contacto</Link>
         <Link style={{margin:"1em", color:"white"}} to={"/login"}>Iniciar sesión</Link>
         <Link style={{margin:"1em", color:"white"}} to={"/register"}>Registrarse</Link>
+        {/* Esta es solo de prueba despues va solo en dashboar */}
+        <Link style={{margin:"1em", color:"white"}} to={"/exercises"}>Ejercicios</Link>
+
         <div>
         <ImFacebook2/>
         <ImInstagram/>

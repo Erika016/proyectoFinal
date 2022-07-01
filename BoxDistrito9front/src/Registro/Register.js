@@ -1,6 +1,8 @@
 import classes from "./Register.module.css";
 // import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Spinner } from "../components/carga/Spinner";
+import { AlertRegistro } from "../components/carga/AlertRegistro";
 
 export const Register = () => {
   // const navigate = useNavigate();
@@ -46,6 +48,7 @@ export const Register = () => {
             isRegistered: true
           })
         }
+
       });
   };
   useEffect(()=>{
@@ -53,8 +56,8 @@ export const Register = () => {
   },[registerStatus])
   return (
     <div className={classes.contenedor}>
-      {registerStatus.isLoading && console.log("Loading")}
-      {registerStatus.isRegistered && console.log("Registered")}
+      {registerStatus.isLoading && <Spinner/>}
+      {registerStatus.isRegistered && <AlertRegistro/>}
       <div className={classes.datos}>
         <h1>Box Distrito9</h1>
         <h2>Registrarse</h2>
