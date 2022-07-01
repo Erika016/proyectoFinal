@@ -2,6 +2,7 @@
 // BROWSER WITH LOGO AND DIFFERENT LINKS THAT SEND YOU TO EACH SECTION
 import React from "react";
 import logo from "../info/imagenInfo/logo.PNG"
+import classes from "./Header.module.css"
 import { Link } from "react-router-dom";
 // import { IconName } from "react-icons/fa";
 // PARA INSERTAR ICONOS DE REACT SE INSTALA LA LIBRERIA DE ICONOS REACT
@@ -11,34 +12,49 @@ import { Link } from "react-router-dom";
 import { ImFacebook2 } from "react-icons/im";
 import { ImInstagram } from "react-icons/im";
 import { ImWhatsapp } from "react-icons/im";
-function Navegador() {
+function Header() {
   return (
-    <div>
+    <header>
 
-      <nav style={{ backgroundColor:"black", color:"white", marginBottom:"1em", padding:2 }}>
-      <img style={{width:"20%"}}
+      <img className={classes.logo}
           // className={classes.logo}
           alt="test"
           src={logo}
         />
-        <h1>BOX DISTRITO 9</h1>
+      <nav>
+      <ul>
+        <li>
+        <Link  to="/">Inicio</Link>
 
-        <Link style={{margin:"1em", color:"white"}} to="/">Inicio</Link>
-        <Link style={{margin:"1em", color:"white"}} to="/">Tarifa y Horarios</Link>
-        <Link style={{margin:"1em", color:"white"}} to="/">Actividades</Link>
-        <Link style={{margin:"1em", color:"white"}} to="/">Contacto</Link>
-        <Link style={{margin:"1em", color:"white"}} to={"/login"}>Iniciar sesión</Link>
-        <Link style={{margin:"1em", color:"white"}} to={"/register"}>Registrarse</Link>
+        </li>
+        <li>
+        <Link  to="/">Tarifa y Horarios</Link>
+
+        </li>
+        <li>
+        <Link  to="/">Actividades</Link>
+
+        </li>
+        <li>
+        <Link  to="/">Contacto</Link>
+
+        </li>
+        <li>
+        <Link  to={"/login"}>Iniciar sesión</Link>
+        <Link  to={"/register"}>Registrarse</Link>
+
+        </li>
+    </ul>
         {/* Esta es solo de prueba despues va solo en dashboar */}
-        <Link style={{margin:"1em", color:"white"}} to={"/exercises"}>Ejercicios</Link>
+        {/* <Link  to={"/exercises"}>Ejercicios</Link> */}
+      </nav>
 
         <div>
         <ImFacebook2/>
         <ImInstagram/>
         <ImWhatsapp/>
         </div>
-      </nav>
-    </div>
+    </header>
   );
 }
-export default Navegador;
+export default Header;

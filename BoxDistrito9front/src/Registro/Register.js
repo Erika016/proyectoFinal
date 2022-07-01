@@ -2,7 +2,7 @@ import classes from "./Register.module.css";
 // import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Spinner } from "../components/carga/Spinner";
-import { AlertRegistro } from "../components/carga/AlertRegistro";
+// import { AlertRegistro } from "../components/carga/AlertRegistro";
 
 export const Register = () => {
   // const navigate = useNavigate();
@@ -30,7 +30,8 @@ export const Register = () => {
     e.preventDefault();
     setRegisterStatus({
       isLoading: true,
-      isRegistered: false
+      isRegistered: false,
+      error: null
     })
     fetch("http://localhost:8000/users/insertUser", {
       method: "POST",
@@ -45,11 +46,40 @@ export const Register = () => {
         if(data.data.affectedRows>0){
           setRegisterStatus({
             isLoading: false,
-            isRegistered: true
+            isRegistered: true,
+            error:null
           })
+          setFormValues({
+            name: "",
+            last_name: "",
+            birth_date: "",
+            phone: "",
+            email: "",
+            sessions: "",
+            photo: "",
+            rol: "basic",
+            password: "",
+          });
         }
 
-      });
+      }).catch((error)=>{
+        setRegisterStatus({
+          isLoading: false,
+          isRegistered: false,
+          error:error.message
+        })
+        setFormValues({
+          name: "",
+          last_name: "",
+          birth_date: "",
+          phone: "",
+          email: "",
+          sessions: "",
+          photo: "",
+          rol: "basic",
+          password: "",
+        });
+      })
   };
   useEffect(()=>{
 
@@ -57,7 +87,8 @@ export const Register = () => {
   return (
     <div className={classes.contenedor}>
       {registerStatus.isLoading && <Spinner/>}
-      {registerStatus.isRegistered && <AlertRegistro/>}
+      {registerStatus.isRegistered && console.log("registrado")}
+      {registerStatus.error && console.log(registerStatus.error)}
       <div className={classes.datos}>
         <h1>Box Distrito9</h1>
         <h2>Registrarse</h2>
