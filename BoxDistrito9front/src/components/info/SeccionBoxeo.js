@@ -1,10 +1,10 @@
-import { Fragment } from "react";
 import classes from "./SeccionBoxeo.module.css";
 import boxeo1 from "../info/imagenInfo/boxeo1.jpg";
+import { Fragment } from "react";
 
 // En este componente encontramos una pequeña descripción de lo que es el CROSSFIT, sus beneficios y los malos mitos sobre este entrenamiento.
 // In this component we find a short description of what CROSSFIT is, its benefits and the bad myths about this training.
-function Boxeo() {
+export function SeccionBoxeo() {
   return (
     <Fragment>
       <div>
@@ -67,7 +67,6 @@ function Boxeo() {
           </p>
         </div>
       </div>
-    </Fragment>
+      </Fragment>
   );
 }
-export default Boxeo;

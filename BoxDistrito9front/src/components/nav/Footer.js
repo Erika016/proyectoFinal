@@ -21,7 +21,7 @@ export function Footer() {
       <div>
         <img
           style={{ width: "20%" }}
-          // className={classes.logo}
+          className={classes.logo}
           alt="test"
           src={logo}
         />

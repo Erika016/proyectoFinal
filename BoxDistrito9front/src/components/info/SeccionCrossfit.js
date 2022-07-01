@@ -3,7 +3,7 @@ import classes from "./SeccionCrossfit.module.css";
 // import logo from "../info/imagenInfo/logo.PNG"
 import Rosa from "../info/imagenInfo/Rosa.JPG"
 
-function SeccionCrossfit() {
+export function SeccionCrossfit() {
   return (
     <Fragment>
       <div className={classes.container}>
@@ -81,4 +81,4 @@ function SeccionCrossfit() {
     </Fragment>
   );
 }
-export default SeccionCrossfit;
+

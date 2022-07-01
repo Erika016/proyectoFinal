@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import fisio1 from "../info/imagenInfo/fisio1.jpg"
 import classes from "./SeccionFisio.module.css";
 
-function Fisio() {
+function SeccionFisio() {
   return (
     <Fragment>
       <div>
@@ -36,4 +36,4 @@ function Fisio() {
     </Fragment>
   );
 }
-export default Fisio;
+export default SeccionFisio;

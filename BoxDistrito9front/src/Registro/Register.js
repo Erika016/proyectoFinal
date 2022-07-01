@@ -1,8 +1,8 @@
 import classes from "./Register.module.css";
 // import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Spinner } from "../components/carga/Spinner";
-// import { AlertRegistro } from "../components/carga/AlertRegistro";
+import {Spinner} from "../components/spinner/Spinner"
+import {Alert} from "../components/alert/Alert"
 
 export const Register = () => {
   // const navigate = useNavigate();
@@ -87,8 +87,8 @@ export const Register = () => {
   return (
     <div className={classes.contenedor}>
       {registerStatus.isLoading && <Spinner/>}
-      {registerStatus.isRegistered && console.log("registrado")}
-      {registerStatus.error && console.log(registerStatus.error)}
+      {registerStatus.isRegistered && <Alert message="Registro correcto"/>}
+      {registerStatus.error && <Alert message="Error en el registro"/>}
       <div className={classes.datos}>
         <h1>Box Distrito9</h1>
         <h2>Registrarse</h2>

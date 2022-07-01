@@ -49,7 +49,7 @@ function Header() {
         {/* <Link  to={"/exercises"}>Ejercicios</Link> */}
       </nav>
 
-        <div>
+        <div className={classes.redes}>
         <ImFacebook2/>
         <ImInstagram/>
         <ImWhatsapp/>
