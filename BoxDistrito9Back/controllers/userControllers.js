@@ -16,6 +16,7 @@ class UserController {
    */
 
    async insertUser(req, res) {
+    console.log(req.body)
     const name = req.body.name;
     const last_name = req.body.last_name;
     const birth_date = req.body.birth_date;
@@ -29,12 +30,14 @@ class UserController {
       "INSERT INTO users (name, last_name, birth_date, phone, email, sessions, photo, rol, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [name, last_name, birth_date, phone, email, sessions, photo, rol, password],
       (error, rows) => {
-        if (error)
-          console.log({
+        if (error){
+        res.json({
             status: "failed",
             data: rows,
             error: error.message,
-          });
+          })
+        };
+        console.log(rows)
         res.json({
           status: "succedeed",
           data: rows,

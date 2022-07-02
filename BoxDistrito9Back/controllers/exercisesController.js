@@ -84,7 +84,7 @@ class ExercisesController {
     } = req.params;
 
     dbMysql.query(
-      "SELECT * FROM max_weith id_exercise = ? and id_User LIKE ?",
+      "SELECT * FROM max_weight id_exercise = ? and id_User LIKE ?",
       [id_exerise, id_User],
       (error, rows, next) => {
         if (error) console.log({
@@ -112,11 +112,11 @@ class ExercisesController {
 
   deleteWeight(req, res) {
     const {
-      id_weith
+      id_weight
     } = req.params;
     dbMysql.query(
-      "DELETE FROM weith WHERE id_weith = ?",
-      [id_weith],
+      "DELETE FROM weight WHERE id_weight = ?",
+      [id_weight],
       (error, rows) => {
         if (error) console.log({
           status: 'failed',
@@ -153,12 +153,12 @@ class ExercisesController {
       date
     } = req.body;
     const {
-      weith
+      weight
     } = req.body;
 
     dbMysql.query(
-      'INSERT INTO Pesos (id_User, id_exercise, date, weith) VALUES (?, ?, ?, ?)',
-      [id_User, id_exerise, date, weith],
+      'INSERT INTO Pesos (id_User, id_exercise, date, weight) VALUES (?, ?, ?, ?)',
+      [id_User, id_exerise, date, weight],
       (error, rows) => {
         if (error) console.log({
           status: 'failed',
