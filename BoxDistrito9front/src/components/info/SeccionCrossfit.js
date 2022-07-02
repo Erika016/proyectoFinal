@@ -1,11 +1,10 @@
-import { Fragment } from "react";
 import classes from "./SeccionCrossfit.module.css";
 // import logo from "../info/imagenInfo/logo.PNG"
 import Rosa from "../info/imagenInfo/Rosa.JPG"
+import { Link } from "react-router-dom";
 
 export function SeccionCrossfit() {
   return (
-    <Fragment>
       <div className={classes.container}>
         <h1>BOX DISTRITO 9 </h1>
         <h2 className={classes.titulo}>CROSSFIT</h2>
@@ -77,8 +76,8 @@ export function SeccionCrossfit() {
           </p>
           <h2>No tienes más excusas!!!</h2>
         </div>
+        <Link to="/">Inicio</Link>
       </div>
-    </Fragment>
   );
 }
 

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from './components/AuthContext';
+import { Footer } from './components/nav/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
   <AuthProvider>
   <BrowserRouter>
     <App />
+    <Footer />
   </BrowserRouter>
 </AuthProvider>
   

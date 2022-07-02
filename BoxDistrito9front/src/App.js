@@ -4,15 +4,19 @@ import { Login } from "./Registro/Login";
 import { Dashboard } from "./Registro/Dashboard";
 import { NotFound } from "./Registro/NotFound";
 import { Register } from "./Registro/Register";
+import {TarifasHorarios} from "./components/tarifasYhorarios/TarifasHorarios.js";
 import { Users } from "./Registro/Users";
 import { UserDetails } from "./Registro/UserDetails";
 import { Exercises } from "./components/datos/Exercises";
 import { SeccionCrossfit } from "./components/info/SeccionCrossfit.js";
 import { Fragment } from "react";
 import Header from "./components/nav/Header";
-import { Footer } from "./components/nav/Footer";
+// import { Footer } from "./components/nav/Footer";
 import { SeccionBoxeo } from "./components/info/SeccionBoxeo";
 import SeccionFisio from "./components/info/SeccionFisio";
+import { ContactoLocalizacion } from "./components/contacto/ContactoLocalizacion";
+import { AddWeigth } from "./components/datos/AddWeight";
+import { DeleteWeigth } from "./components/datos/DeleteWeigth";
 
 function App() {
   return (
@@ -23,7 +27,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/tarifashorarios" element={<TarifasHorarios />} />
+        <Route path="/contactolocalizacion" element={<ContactoLocalizacion />} />
         <Route path="/exercises" element={<Exercises />} />
+        <Route path="/addWeigth" element={<AddWeigth />} />
+        <Route path="/deleteWeigth" element={<DeleteWeigth />} />
         <Route path="/seccionCrossfit" element={<SeccionCrossfit />} />
         <Route path="/seccionBoxeo" element={<SeccionBoxeo/>} />
         <Route path="/seccionFisio" element={<SeccionFisio/>} />
@@ -36,7 +44,7 @@ function App() {
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate to="404" replace />} />
       </Routes>
-      <Footer />
+      
     </Fragment>
   );
 }

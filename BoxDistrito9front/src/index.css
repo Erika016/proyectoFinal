@@ -31,6 +31,7 @@ header {
   color: white;
   margin-bottom: 1em;
   padding: 2;
+  height: 20vh;
 }
 nav ul{
   display: flex;

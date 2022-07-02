@@ -1,0 +1,13 @@
+.container{
+width: 100%;
+height: auto;
+border: 2px #eee solid;
+display: block;
+justify-content:center;
+margin: 0;
+text-align: center;
+}
+.container label{
+    color: brown;
+    font-size: 1.3em;
+}

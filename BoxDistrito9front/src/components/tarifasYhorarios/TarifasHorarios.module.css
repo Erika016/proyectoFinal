@@ -1,0 +1,35 @@
+.container {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  margin:0;
+  height: auto;
+}
+.titulo{
+  font-size: 2em;
+  font-family: fredoka;
+}
+.titulo {
+  text-align: center;
+  font-family: Wallpoet;
+}
+.tarifa {
+  font-size: 1.2em;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  border-collapse: separate;
+  margin: 2rem 4rem;
+
+}
+th,
+td {
+  border: solid 2px #eee;
+  padding: 8px;
+}
+th {
+  background-color: gray;
+}
+tr:nth-child(odd) {
+  background-color: #eee;
+}

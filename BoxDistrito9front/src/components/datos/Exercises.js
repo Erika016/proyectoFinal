@@ -23,6 +23,8 @@ export function Exercises() {
           </li>
         );
       })}
+          <li><Link to="/dashboard">Volver</Link></li>
+
     </div>
   );
 }

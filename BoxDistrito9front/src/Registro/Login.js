@@ -38,10 +38,11 @@ export const Login = () => {
   return (
     <div >
       <div className={classes.container}>
-        <h1>Box Distrito9</h1>
+        <div className={classes.titulo}>
+        <h1>BOX DISTRITO9</h1>
         <h2>Iniciar Sesion</h2>
         <form onSubmit={handleOnSubmit}>
-          <label htmlFor="email" className={classes.titulo}>
+          <label htmlFor="email" >
             Email
           </label>
           <input
@@ -53,7 +54,7 @@ export const Login = () => {
             placeholder="Email"
             onChange={handleInputChange}
           />
-          <label className={classes.titulo} htmlFor="password" >
+          <label htmlFor="password" >
             Password
           </label>
           <input
@@ -65,9 +66,10 @@ export const Login = () => {
             onChange={handleInputChange}
             value={formValues.password}
           />
+          
           <div className={classes.registro}>
-            <p>¿Are you not registered?</p>
-            <Link className={classes.click} to="/register">Click here</Link>
+            <p>¿No estás registrado?</p>
+            <Link className={classes.click} to="/register">Pulse aquí</Link>
           </div>
           <div>
             <button type="submit" className={classes.button}>
@@ -75,6 +77,7 @@ export const Login = () => {
             </button>
           </div>
         </form>
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import { Fragment } from "react";
-import fisio1 from "../info/imagenInfo/fisio1.jpg"
+import fisio1 from "../info/imagenInfo/fisio1.jpg";
 import classes from "./SeccionFisio.module.css";
+import { Link } from "react-router-dom";
+
 
 function SeccionFisio() {
   return (
-    <Fragment>
       <div>
         <div>
           <h1>FisioTerapia MMuñoz</h1>
@@ -31,9 +31,9 @@ function SeccionFisio() {
               trabajo <b>preventivo</b> y otro de recuperación de lesiones.
             </p>
           </div>
+          <Link to="/">Inicio</Link>
         </div>
       </div>
-    </Fragment>
   );
 }
 export default SeccionFisio;

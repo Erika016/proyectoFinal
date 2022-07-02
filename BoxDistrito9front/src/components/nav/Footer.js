@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import classes from "./Footer.module.css";
-import logo from "../info/imagenInfo/logo.PNG";
 import { ImFacebook2 } from "react-icons/im";
 import { ImInstagram } from "react-icons/im";
 import { ImWhatsapp } from "react-icons/im";
@@ -9,26 +8,25 @@ export function Footer() {
   return (
     <Fragment>
       <div className={classes.footer}>
-        <div>
-        <p>Box Distrito9</p>
-        <label>Teléfono</label>
-        <p>661554273</p>
+      <seccion className={classes.direccion}>
         <label>Dirección</label>
         <p>
           Calle Felipe Gonzalez Vallejo, 6, <br></br> 29591 Campanillas, Málaga,España
         </p>
-        </div>
-      <div>
-        <img
-          style={{ width: "20%" }}
-          className={classes.logo}
-          alt="test"
-          src={logo}
-        />
+        </seccion>
+       
+        <h1 className={classes.nombre}>BOX DISTRITO9</h1>
         <div>
-        <ImFacebook2/>
-        <ImInstagram/>
-        <ImWhatsapp/>
+        <label  className={classes.reservas}>Teléfono de reservas</label>
+        <p>661554273</p>
+        </div>
+      
+      <div>
+    
+        <div className={classes.redes}>
+          <div className={classes.face}><ImFacebook2 /></div>
+          <div className={classes.insta}><ImInstagram/></div>
+          <div className={classes.what}><ImWhatsapp/></div>
         </div>
       </div>
       </div>

@@ -1,15 +1,14 @@
 import classes from "./SeccionBoxeo.module.css";
 import boxeo1 from "../info/imagenInfo/boxeo1.jpg";
-import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 // En este componente encontramos una pequeña descripción de lo que es el CROSSFIT, sus beneficios y los malos mitos sobre este entrenamiento.
 // In this component we find a short description of what CROSSFIT is, its benefits and the bad myths about this training.
 export function SeccionBoxeo() {
   return (
-    <Fragment>
       <div>
         <h1 className={classes.titulo}>BOXEO</h1>
-        <div>
+        <div className={classes.columna}>
           <h2>¿Que os ofrecemos en las clases de BOXEO de BOX DISTRITO9?</h2>
           <p>
             Las clases de Boxeo, estan orientadas a la tecnica de este deporte
@@ -22,7 +21,7 @@ export function SeccionBoxeo() {
           </p>
           <img className={classes.imagen} alt="test" src={boxeo1} />
         </div>
-        <div>
+        <div className={classes.columna}>
           <h3>¿Que es el Boxeo</h3>
           <p>
             El boxeo es un deporte de combate en el cual 2 personas pelean solo
@@ -31,9 +30,9 @@ export function SeccionBoxeo() {
             liga deportiva de boxeo.
           </p>
         </div>
-        <div>
+        <div className={classes.columna}>
           <h3>Lo 5 mejores beneficios que tiene practicar Boxeo</h3>
-          <ul>
+          <ul className={classes.lista}>
             <li> Ayuda a perder peso. ...</li>
             <li>Pone en forma todos los músculos del cuerpo. ...</li>
             <li>Reduce el estrés. ...</li>
@@ -65,8 +64,8 @@ export function SeccionBoxeo() {
             reservas de la clase se hace por Whatsapp en el teléfono 661 55 42
             73
           </p>
+          <Link to="/">Inicio</Link>
         </div>
       </div>
-      </Fragment>
   );
 }

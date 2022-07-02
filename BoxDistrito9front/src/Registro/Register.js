@@ -1,11 +1,9 @@
 import classes from "./Register.module.css";
-// import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {Spinner} from "../components/spinner/Spinner"
 import {Alert} from "../components/alert/Alert"
 
 export const Register = () => {
-  // const navigate = useNavigate();
   const [registerStatus, setRegisterStatus] = useState({
     isLoading: false,
     isRegistered: false
@@ -90,10 +88,11 @@ export const Register = () => {
       {registerStatus.isRegistered && <Alert message="Registro correcto"/>}
       {registerStatus.error && <Alert message="Error en el registro"/>}
       <div className={classes.datos}>
-        <h1>Box Distrito9</h1>
+        <h1>BOX DISTRITO9</h1>
         <h2>Registrarse</h2>
         <form onSubmit={handleOnSubmit}>
           <div className={classes.columna}>
+            <div className={classes.primero}>
             <label htmlFor="first_name">Name</label>
             <input
               id="name"
@@ -137,6 +136,8 @@ export const Register = () => {
               onChange={handleInputChange}
               value={formValues.phone}
             />
+            </div>
+            <div className={classes.segundo}>
             <label htmlFor="email">Email</label>
             <input
               className={classes.email}
@@ -180,10 +181,12 @@ export const Register = () => {
               required
               onChange={handleInputChange}
               value={formValues.password}
+              
             />
+            </div>
           </div>
-          <div className={classes.button}>
-            <button type="submit">Registrarse</button>
+          <div >
+            <button className={classes.button} type="submit">Registrarse</button>
           </div>
         </form>
       </div>

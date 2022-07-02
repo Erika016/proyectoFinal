@@ -1,14 +1,15 @@
-import classes from "./Pesos.module.css";
+import classes from "./AddWeigth.module.css"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 //Mostrar los pesos con ese usuario e id del ejercicio
 //Show the weights with that user and exercise id
 
-export const Register = () => {
+export const AddWeigth = () => {
   const [formValues, setFormValues] = useState({
     name: "",
-    description: "",
-    weith: "",
+    // description: "",
+    weigth: "",
     date: "",
   });
   const handleInputChange = (e) => {
@@ -48,7 +49,7 @@ export const Register = () => {
               required
               onChange={handleInputChange}
             />
-            <label htmlFor="description">Descripcion</label>
+            {/* <label htmlFor="description">Descripcion</label>
             <input
               id="description"
               className={classes.descripcion}
@@ -58,17 +59,17 @@ export const Register = () => {
               placeholder="Descripcion"
               required
               onChange={handleInputChange}
-            />
-            <label htmlFor="weith">Pesos</label>
+            /> */}
+             <label htmlFor="weigth">Pesos</label>
             <input
-              id="weith"
-              className={classes.weith}
+              id="weigth"
+              className={classes.weigth}
               type="int"
-              name="weith"
-              placeholder="weith"
+              name="weigth"
+              placeholder="Peso registrado"
               required
               onChange={handleInputChange}
-              value={formValues.weith}
+              value={formValues.weigth}
             />
             <label htmlFor="date">Fecha</label>
             <input
@@ -82,10 +83,11 @@ export const Register = () => {
             />
           </div>
           <div className={classes.button}>
-            <button type="submit">Insertat</button>
+            <button type="submit">Insertar</button>
           </div>
         </form>
       </div>
+      <li><Link to="/dashboard">Volver</Link></li>
     </div>
   );
 };

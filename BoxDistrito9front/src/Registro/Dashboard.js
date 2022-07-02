@@ -1,24 +1,47 @@
-import {useContext} from "react";
+import { useContext } from "react";
 import { Fragment } from "react";
-import {Navigate} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthContext";
 import { Link } from "react-router-dom";
+import classes from "./Dashboard.module.css";
 
 export const Dashboard = () => {
-    const {token, setToken} = useContext(AuthContext);
-    if (!token) return <Navigate to="/login" replace/>;
-    return(
-        <Fragment>
-            <h1>
-                Area de Usuario<br/>
-                componente(Dashboard)
-            </h1>
-            <div>
-            <Link style={{margin:"1em", color:"white"}} to={"/exercises"}>Ejercicios</Link>
+  const { token, setToken } = useContext(AuthContext);
+  if (!token) return <Navigate to="/login" replace />;
+  return (
+    <Fragment>
+      <h1>
+        Bienvenido al area de usuario
+        <br />
+        componente(Dashboard)
+      </h1>
 
-            </div>
-
-            <button onClick={()=>setToken(undefined)}>Cerrar Sesion</button>
-        </Fragment>
-    );
+      <div>
+        <ul className={classes.boton}>
+          <li>
+            <Link to={"/exercises"}>
+              Ejercicios
+            </Link>
+          </li>
+          <li>
+            <Link to={"/addWeigth"}>
+              Añadir Pesos
+            </Link>
+          </li>
+          <li>
+            <Link to={"/deleteWeigth"}>
+              Borrar pesos
+            </Link>
+          </li>
+          <li>
+            <button
+               onClick={() => setToken(undefined)}
+            >
+              Cerrar Sesion
+            </button>
+          </li>
+        </ul>
+      </div>
+    </Fragment>
+  );
 };
