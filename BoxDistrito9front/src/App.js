@@ -16,6 +16,7 @@ import { SeccionBoxeo } from "./components/info/SeccionBoxeo";
 import SeccionFisio from "./components/info/SeccionFisio";
 import { ContactoLocalizacion } from "./components/contacto/ContactoLocalizacion";
 import { AddWeigth } from "./components/datos/AddWeight";
+import {Perfil} from "./components/datos/Perfil"
 import { DeleteWeigth } from "./components/datos/DeleteWeigth";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/addWeigth" element={<AddWeigth />} />
         <Route path="/deleteWeigth" element={<DeleteWeigth />} />
+        <Route path="/perfil" element={<Perfil />} />
         <Route path="/seccionCrossfit" element={<SeccionCrossfit />} />
         <Route path="/seccionBoxeo" element={<SeccionBoxeo/>} />
         <Route path="/seccionFisio" element={<SeccionFisio/>} />

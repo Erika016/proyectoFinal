@@ -26,3 +26,18 @@
     height: 540px;
     padding-top: 2em;
 }
+
+@media (max-width: 576px){
+  .imagen{
+    max-width: 320px;
+    max-height: 300px;
+
+  }
+}
+@media (max-width: 900px){
+  .imagen{
+    max-width: 460px;
+    max-height: 400px;
+
+  }
+}

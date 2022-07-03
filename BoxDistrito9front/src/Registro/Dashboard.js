@@ -10,13 +10,7 @@ export const Dashboard = () => {
   if (!token) return <Navigate to="/login" replace />;
   return (
     <Fragment>
-      <h1>
-        Bienvenido al area de usuario
-        <br />
-        componente(Dashboard)
-      </h1>
-
-      <div>
+      <nav>
         <ul className={classes.boton}>
           <li>
             <Link to={"/exercises"}>
@@ -26,6 +20,11 @@ export const Dashboard = () => {
           <li>
             <Link to={"/addWeigth"}>
               Añadir Pesos
+            </Link>
+          </li>
+          <li>
+            <Link to={"/perfil"}>
+              Mí perfil
             </Link>
           </li>
           <li>
@@ -41,6 +40,14 @@ export const Dashboard = () => {
             </button>
           </li>
         </ul>
+      </nav>
+      <h1>
+        Bienvenido al area de usuario
+        <br />
+        componente(Dashboard)
+      </h1>
+
+      <div>
       </div>
     </Fragment>
   );

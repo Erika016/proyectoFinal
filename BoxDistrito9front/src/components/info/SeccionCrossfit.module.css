@@ -51,3 +51,17 @@ li {
     cursor: pointer;
     text-decoration: none;
   }
+  @media (max-width: 576px){
+    .imagen{
+      max-width: 220px;
+      max-height: 300px;
+      
+  
+    }
+  }
+  @media (max-width: 900px){
+    .imagen{
+      max-width: 320px;
+      max-height: 400px;
+    }
+  }

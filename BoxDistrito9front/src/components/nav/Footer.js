@@ -8,12 +8,12 @@ export function Footer() {
   return (
     <Fragment>
       <div className={classes.footer}>
-      <seccion className={classes.direccion}>
+      <div className={classes.direccion}>
         <label>Dirección</label>
         <p>
           Calle Felipe Gonzalez Vallejo, 6, <br></br> 29591 Campanillas, Málaga,España
         </p>
-        </seccion>
+        </div>
        
         <p className={classes.nombre}>BOX DISTRITO9</p>
         <div>
