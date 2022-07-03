@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 // In this component we find a short description of what CROSSFIT is, its benefits and the bad myths about this training.
 export function SeccionBoxeo() {
   return (
-      <div>
-        <h1 className={classes.titulo}>BOXEO</h1>
-        <div className={classes.columna}>
-          <h2>¿Que os ofrecemos en las clases de BOXEO de BOX DISTRITO9?</h2>
+      <div className={classes.container}>
+          <h1 className={classes.nombre}>BOX DISTRITO 9 </h1>
+        <h2 className={classes.titulo}>BOXEO</h2>
+        <div>
+          <h3 className={classes.principal}>¿Que os ofrecemos en las clases de BOXEO de BOX DISTRITO9?</h3>
           <p>
             Las clases de Boxeo, estan orientadas a la tecnica de este deporte
             poco practicado y muy beneficioso para la salud. En los
@@ -21,8 +22,8 @@ export function SeccionBoxeo() {
           </p>
           <img className={classes.imagen} alt="test" src={boxeo1} />
         </div>
-        <div className={classes.columna}>
-          <h3>¿Que es el Boxeo</h3>
+        <div >
+          <h3 className={classes.principal}>¿Que es el Boxeo</h3>
           <p>
             El boxeo es un deporte de combate en el cual 2 personas pelean solo
             usando sus puños, sin usos de sus piernas. Los golpes son de la
@@ -30,19 +31,19 @@ export function SeccionBoxeo() {
             liga deportiva de boxeo.
           </p>
         </div>
-        <div className={classes.columna}>
-          <h3>Lo 5 mejores beneficios que tiene practicar Boxeo</h3>
-          <ul className={classes.lista}>
+        <div >
+          <h3 className={classes.principal}>Lo 5 mejores beneficios que tiene practicar Boxeo</h3>
+         
             <li> Ayuda a perder peso. ...</li>
             <li>Pone en forma todos los músculos del cuerpo. ...</li>
             <li>Reduce el estrés. ...</li>
             <li>Mejora la concentración. ...</li>
             <li>Aumenta la confianza en uno mismo. ...</li>
-          </ul>
+
         </div>
 
         <div>
-          <h3>Consejos antes de practicarlo</h3>
+          <h3 className={classes.principal}>Consejos antes de practicarlo</h3>
           <p>
             Como en todos los deportes, cuando se decide iniciar una rutina, lo
             ideal es contar con la experiencia y supervisión de un profesional
@@ -58,13 +59,13 @@ export function SeccionBoxeo() {
         </div>
 
         <div>
-          <h3>Horarios de Boxeo</h3>
+          <h3 className={classes.principal}>Horarios de Boxeo</h3>
           <p>
             Las clases de boxeo son los MARTES y JUEVES a las 21:30PM. Las
             reservas de la clase se hace por Whatsapp en el teléfono 661 55 42
             73
           </p>
-          <Link to="/">Inicio</Link>
+          <Link className={classes.boton} to="/">Volver a Inicio</Link>
         </div>
       </div>
   );

@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid var(--dark);
+    margin: 0;
     padding: 1em;
     background-color: black;
     color: white;
@@ -13,7 +14,7 @@
     font-size: 1.4rem;
 }
 .nombre{
-font-size: 2em;
+font-size: 3em;
 font-family: wallpoet;
 }
 

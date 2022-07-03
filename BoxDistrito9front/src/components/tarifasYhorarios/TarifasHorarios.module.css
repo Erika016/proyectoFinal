@@ -1,31 +1,49 @@
 .container {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  width: 100vw;
   margin:0;
   height: auto;
 }
-.titulo{
+
+.texto{
+  text-align: center;
+  animation: over-and-back 2.5s linear infinite;
+}
+@keyframes over-and-back {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(50px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.titulo {
   font-size: 2em;
   font-family: fredoka;
-}
-.titulo {
   text-align: center;
   font-family: Wallpoet;
 }
+
 .tarifa {
   font-size: 1.2em;
-  text-align: center;
-  width: 100%;
+  width: 100vw;
   max-width: 450px;
   border-collapse: separate;
-  margin: 2rem 4rem;
+  margin: 0px auto;
+  padding: 2rem 4rem;
 
 }
 th,
 td {
   border: solid 2px #eee;
   padding: 8px;
+  text-align: center;
 }
 th {
   background-color: gray;

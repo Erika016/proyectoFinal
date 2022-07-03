@@ -4,7 +4,7 @@ import { CgGym } from "react-icons/cg";
 export function TarifasHorarios() {
   return (
     <div className={classes.container}>
-      <h1 className={classes.texto}><GiBiceps/> Ven y comprueba que puedes hacelro <GiBiceps/> que no te lo cuenten.<CgGym/></h1>
+      <h1 className={classes.texto}><GiBiceps/> Ven y comprueba que puedes hacerlo <GiBiceps/> que no te lo cuenten.<CgGym/></h1>
 
       <table className={classes.tarifa}>
         <h2 className={classes.titulo}>TARIFAS</h2>

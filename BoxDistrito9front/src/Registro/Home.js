@@ -12,6 +12,7 @@ function Home(){
     return(
         <Fragment>
             <Motivacion/>
+            <h2 className={classes.actividades}>ACTIVIDADES</h2>
             <div className={classes.containerHome}>
                 <div className={classes.cards}>
                 <Cards

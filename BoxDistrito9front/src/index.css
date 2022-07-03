@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+ 
 }
 :root {
   font-size: 0.785rem;
@@ -20,7 +21,6 @@
   --cyan: #0dcaf0;
   --dark: #292a2b;
 }
-
 
 
 header {

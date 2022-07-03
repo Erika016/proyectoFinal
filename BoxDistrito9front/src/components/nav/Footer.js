@@ -15,7 +15,7 @@ export function Footer() {
         </p>
         </seccion>
        
-        <h1 className={classes.nombre}>BOX DISTRITO9</h1>
+        <p className={classes.nombre}>BOX DISTRITO9</p>
         <div>
         <label  className={classes.reservas}>Teléfono de reservas</label>
         <p>661554273</p>
