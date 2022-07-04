@@ -3,6 +3,7 @@ In this repository I have created my final project, called **Box Distrito9**. I 
 The repository is divided into 2, on the one hand the backEnd where I have created the entire database called BOX DICTRITO9 with PHPMYADMIN and on the other hand the Front.
 For the BackEnd I have used MYSQL with NODE.JS and for the front I have used REACT, for the layout I have used CSS.MODULE.
 
+http://localhost/phpmyadmin/db_structure.php?server=1&db=BoxDictrito9
 
 Below I detail the endpoints of the BackEnd part.
 

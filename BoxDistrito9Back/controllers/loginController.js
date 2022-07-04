@@ -44,6 +44,7 @@ class LoginController {
                     token: generateToken(rows, false),
                     refresh_token: generateToken(rows, true),
                     error: error || null,
+                    id_user: rows[0].id_User
                   });
                 } else {
                   res
