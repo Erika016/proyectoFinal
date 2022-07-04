@@ -1,17 +1,60 @@
 import classes from "./AddWeigth.module.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ExercisesList } from "./ExercisesList";
 
 //Mostrar los pesos con ese usuario e id del ejercicio
 //Show the weights with that user and exercise id
 
 export const AddWeigth = () => {
+
+
+ const [searchStatus, setSearchStatus] = useState({
+  hasExercises: false
+})  
+
+// var arrayExercises = [];
+  var arrayExercises = [{
+    id_exercise: 1,
+    name: "Back Squat",
+    description: "Sentadilla trasera, Aumenta la resistencia cardiovascular, al tratarse de un ejercicio funcional que implica grandes grupos musculares."
+}]; 
+
+  const getExercises = (e) => {
+    if(e && e !== ''){
+    fetch("http://localhost:8000/exercises/searchExercises/"+ e, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.data.length > 0){
+          arrayExercises = data.data; 
+          setSearchStatus ({
+            hasExercises: true
+          })
+        } else {
+          setSearchStatus ({
+            hasExercises: false
+          }) 
+        }
+        console.log(data, 'estees el array',arrayExercises);
+      });
+    } else {
+      setSearchStatus ({
+        hasExercises: false
+      }) 
+    }
+  };
+
   const [formValues, setFormValues] = useState({
     name: "",
-    // description: "",
     weigth: "",
     date: "",
   });
+  
   const handleInputChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -31,11 +74,31 @@ export const AddWeigth = () => {
         console.log(data);
       });
   };
+
   return (
     <div className={classes.contenedor}>
       <div className={classes.datos}>
         <h1>Box Distrito9</h1>
         <h2>Pesos Registrados</h2>
+{/* Buscador de ejercicios */}
+          <div className={classes.columna}>
+            <h1>Buscar ejercicio</h1>
+            <input
+              className={classes.Name}
+              placeholder="Name"
+              required
+              onChange={(event) => getExercises(event.target.value)}
+            />
+            <div>
+            {arrayExercises.length > 0 && searchStatus.hasExercises && <ExercisesList exercises={arrayExercises}/>}
+            </div>
+          </div>
+          {/* <div className={classes.button}>
+            <button onClick={getExercises(valueNameExercises)}>Buscar</button>
+          </div> */}
+
+
+
         <form onSubmit={handleOnSubmit}>
           <div className={classes.columna}>
             <label htmlFor="name">Name</label>

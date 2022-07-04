@@ -32,11 +32,11 @@ import { Users } from "../../Registro/Users";
           email: "",
           sessions: "",
           photo: "",
-            rol: "basic",
-            password: "",
-            // });
+          rol: "basic",
+          password: "",
+          });
   useEffect (() => {
-    fetch("http://localhost:8000/users//userProfile/:id_User", {
+    fetch("http://localhost:8000/users/userProfile/:id_User", {
       method: "GET",
       body: JSON.stringify(formValues),
       headers: {
@@ -47,7 +47,7 @@ import { Users } from "../../Registro/Users";
       .then((data) => {
         console.log(data);
       });
-  }[]);
+  },[]);
   
   return(
     <div>

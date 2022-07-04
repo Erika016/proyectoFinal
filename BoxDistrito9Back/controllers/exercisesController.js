@@ -77,15 +77,15 @@ class ExercisesController {
 
   searchWeight(req, res) {
     const {
-      id_exerise
+      id_exercise
     } = req.params;
     const {
       id_User
     } = req.params;
 
     dbMysql.query(
-      "SELECT * FROM max_weight id_exercise = ? and id_User LIKE ?",
-      [id_exerise, id_User],
+      "SELECT * FROM max_weigth where id_exercise = ? and id_User = ?",
+      [id_exercise, id_User],
       (error, rows, next) => {
         if (error) console.log({
           status: 'failed',

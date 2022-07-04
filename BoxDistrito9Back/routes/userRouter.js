@@ -19,7 +19,7 @@ router.put('/updateUser', verifyToken, controlador.updateUser);
 //Perfil del usuario
 //User profile
 
-router.get('/userProfile/:id_User', verifyToken, controlador.userProfile);
+router.get('/userProfile/:id_User', controlador.userProfile);
 
 //Mostrar los usuarios
 // show users
