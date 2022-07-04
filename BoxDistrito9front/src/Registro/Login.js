@@ -4,17 +4,20 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthContext";
 import { useContext, useState } from "react";
 import classes from "./Login.module.css";
+import {Spinner} from "../components/spinner/Spinner";
 
 export const Login = () => {
   //navigate, usecontext and form tools
   const navigate = useNavigate();
   const { token, setToken } = useContext(AuthContext);
+  const [idUser, setIdUser] =useState([]);
   const [formValues, setFormValues] = useState({ email: "", password: "" });
   const handleInputChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   //submit data
   // enviar datos
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:8000/login", {
@@ -26,10 +29,19 @@ export const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setIdUser(data.id_user);
+        console.log('estos son los datos que nos da el login', data.id_user)
         setToken(data.token);
         console.log(data.token);
         navigate("/dashboard", { replace: true });
       });
+      if (!idUser) {
+        return (
+          <div>
+            <Spinner/>
+          </div>
+        );
+      }
   };
   //If you have Token ok and if you don't have it, it returns you to the control panel
   // Si tienes Token ok y si no tienes te devuelve al panel de control

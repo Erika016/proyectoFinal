@@ -18,11 +18,13 @@ import { ContactoLocalizacion } from "./components/contacto/ContactoLocalizacion
 import { AddWeigth } from "./components/datos/AddWeight";
 import {Perfil} from "./components/datos/Perfil"
 import { DeleteWeigth } from "./components/datos/DeleteWeigth";
+import { ImagenPrincipal } from "./components/nav/ImagenPrincipal";
 
 function App() {
   return (
     <Fragment>
       <Header />
+      <ImagenPrincipal/>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
