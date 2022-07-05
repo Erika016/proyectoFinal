@@ -14,14 +14,14 @@ import { ImInstagram } from "react-icons/im";
 import { ImWhatsapp } from "react-icons/im";
 function Header() {
   return (
-    <header>
+    <header className={classes.container}>
       <img
         className={classes.logo}
         // className={classes.logo}
         alt="test"
         src={logo}
       />
-      <nav>
+      <nav >
         <ul>
           <li>
             <Link to="/">Inicio</Link>
@@ -39,9 +39,9 @@ function Header() {
           <li>
             <Link to={"/login"}>Iniciar sesión</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to={"/register"}>Registrarse</Link>
-          </li>
+          </li> */}
         </ul>
         {/* Esta es solo de prueba despues va solo en dashboar */}
         {/* <Link  to={"/exercises"}>Ejercicios</Link> */}

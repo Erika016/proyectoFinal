@@ -25,12 +25,12 @@ export function Perfil() {
 
 // const { token, setToken } = useContext(AuthContext);
 
-// if(token){
-//     getProfile(8);
+// if(setToken){
+//     getProfile(47);
 // }
 
 // const getProfile = (e) => {
-    fetch("http://localhost:8000/users/userProfile/" + e, {
+    fetch("http://localhost:8000/users/userProfile/47", {
       method: "GET",
       body: JSON.stringify(formValues),
       headers: {

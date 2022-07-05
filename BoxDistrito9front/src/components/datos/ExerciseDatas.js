@@ -1,4 +1,4 @@
-import classes from "./ExerciseDatas.module.css";
+// import classes from "./ExerciseDatas.module.css";
 import React, { useState } from "react";
 
 export const ExerciseDatas = (props) => {  

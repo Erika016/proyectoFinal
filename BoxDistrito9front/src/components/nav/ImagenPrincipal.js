@@ -1,4 +1,4 @@
-import fondo from "../info/imagenInfo/fondo.JPG";
+import fondo from "../info/imagenInfo/entrada.jpg";
 import classes from "./ImagenPrincipal.module.css"
 export function ImagenPrincipal (){
 return(

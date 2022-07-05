@@ -2,11 +2,11 @@
     width: 100vw;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-top: 1px solid var(--dark);
     margin: 0;
-    padding: 1em;
+    padding: 1em 2em;
     background-color: black;
     color: white;
     font-weight: bold;
