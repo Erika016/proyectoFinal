@@ -31,9 +31,10 @@ float: left;
     max-width: 50px;
     font-size: 2rem;
     cursor: pointer;
-    padding: 1.2em;
+    padding: 1.5em;
     margin: .5em;
     float: right;
+    transition: all 2s ease;
 }
 .face:hover{
     font-size: 2em;

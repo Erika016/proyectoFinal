@@ -38,6 +38,8 @@ function Header() {
           </li>
           <li>
             <Link to={"/login"}>Iniciar sesión</Link>
+          </li>
+          <li>
             <Link to={"/register"}>Registrarse</Link>
           </li>
         </ul>

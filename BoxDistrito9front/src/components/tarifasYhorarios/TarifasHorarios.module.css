@@ -8,6 +8,7 @@
 }
 
 .texto{
+  padding: 1em;
   text-align: center;
   animation: over-and-back 2.5s linear infinite;
 }
@@ -31,9 +32,16 @@
 }
 
 .tarifa {
-  font-size: 1.2em;
   width: 100vw;
-  max-width: 450px;
+  max-width: 850px;
+  border-collapse: separate;
+  margin: 0px auto;
+  padding: 2rem 4rem;
+
+}
+.tarifa2 {
+  width: 100vw;
+  max-width: 1900px;
   border-collapse: separate;
   margin: 0px auto;
   padding: 2rem 4rem;
@@ -41,6 +49,7 @@
 }
 th,
 td {
+  font-size: 2em;
   border: solid 2px #eee;
   padding: 8px;
   text-align: center;

@@ -24,13 +24,14 @@
 
 
 header {
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: black;
   color: white;
-  margin-bottom: 1em;
-  padding: 2;
+  margin-bottom: 1.2em;
+  padding: 2em;
   height: 20vh;
 }
 nav ul{
@@ -50,9 +51,22 @@ color: black;
 background-color: white;
 padding: .5em 1em;
 font-family: wallpoet;
-border-radius: 8%;
+border-radius: 5%;
+transition: all 1s ease;
+
 }
 nav li a:hover{
   border-radius: 50%;
   font-size: wallpoet;
+  background-color: var(--red);
 }
+@media (min-width: 400px){
+ 
+  nav ul{
+    background-color: #ffc107;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+   */
+  }
+  }

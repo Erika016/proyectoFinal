@@ -15,10 +15,11 @@ import Header from "./components/nav/Header";
 import { SeccionBoxeo } from "./components/info/SeccionBoxeo";
 import SeccionFisio from "./components/info/SeccionFisio";
 import { ContactoLocalizacion } from "./components/contacto/ContactoLocalizacion";
-import { AddWeigth } from "./components/datos/AddWeight";
+// import { AddWeigth } from "./components/datos/AddWeight";
 import {Perfil} from "./components/datos/Perfil"
 import { DeleteWeigth } from "./components/datos/DeleteWeigth";
 import { ImagenPrincipal } from "./components/nav/ImagenPrincipal";
+import { SearchWeigth } from "./components/datos/SearchWeight";
 
 function App() {
   return (
@@ -33,12 +34,13 @@ function App() {
         <Route path="/tarifashorarios" element={<TarifasHorarios />} />
         <Route path="/contactolocalizacion" element={<ContactoLocalizacion />} />
         <Route path="/exercises" element={<Exercises />} />
-        <Route path="/addWeigth" element={<AddWeigth />} />
+        {/* <Route path="/addWeigth" element={<AddWeigth />} /> */}
         <Route path="/deleteWeigth" element={<DeleteWeigth />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/seccionCrossfit" element={<SeccionCrossfit />} />
         <Route path="/seccionBoxeo" element={<SeccionBoxeo/>} />
         <Route path="/seccionFisio" element={<SeccionFisio/>} />
+        <Route path="/searchWeigth" element={<SearchWeigth/>} />
 
         <Route path="/users">
           <Route index element={<Users />} />

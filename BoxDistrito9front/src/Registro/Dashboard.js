@@ -18,7 +18,7 @@ export const Dashboard = () => {
             </Link>
           </li>
           <li>
-            <Link to={"/addWeigth"}>
+            <Link to={"/searchWeigth"}>
               Añadir Pesos
             </Link>
           </li>

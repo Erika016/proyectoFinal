@@ -39,10 +39,12 @@ class LoginController {
                 if (error) {
                   res.status(500).json({ message: error.message });
                 } else if (response) {
+                  console.log(rows)
                   res.status(200).json({
                     status: "success",
                     token: generateToken(rows, false),
                     refresh_token: generateToken(rows, true),
+                    userId: rows.id_User,
                     error: error || null,
                     id_user: rows[0].id_User
                   });

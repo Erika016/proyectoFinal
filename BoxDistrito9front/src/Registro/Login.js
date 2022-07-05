@@ -46,7 +46,7 @@ export const Login = () => {
   //If you have Token ok and if you don't have it, it returns you to the control panel
   // Si tienes Token ok y si no tienes te devuelve al panel de control
 
-  if (token) return <Navigate to="/dashboard" replace />;
+  if (token) return <Navigate to="/dashboard/" replace />;
   return (
     <div >
       <div className={classes.container}>

@@ -12,13 +12,15 @@ export const AddWeigth = () => {
  const [searchStatus, setSearchStatus] = useState({
   hasExercises: false
 })  
+const [exercises, setExercises] = useState([]);
 
-// var arrayExercises = [];
-  var arrayExercises = [{
-    id_exercise: 1,
-    name: "Back Squat",
-    description: "Sentadilla trasera, Aumenta la resistencia cardiovascular, al tratarse de un ejercicio funcional que implica grandes grupos musculares."
-}]; 
+var arrayExercises = [
+  {
+    id_exercise: 0,
+    name: "",
+    description: ""
+}
+]; 
 
   const getExercises = (e) => {
     if(e && e !== ''){
@@ -32,6 +34,7 @@ export const AddWeigth = () => {
       .then((data) => {
         if(data.data.length > 0){
           arrayExercises = data.data; 
+          setExercises(arrayExercises)
           setSearchStatus ({
             hasExercises: true
           })
@@ -40,7 +43,6 @@ export const AddWeigth = () => {
             hasExercises: false
           }) 
         }
-        console.log(data, 'estees el array',arrayExercises);
       });
     } else {
       setSearchStatus ({
@@ -85,12 +87,12 @@ export const AddWeigth = () => {
             <h1>Buscar ejercicio</h1>
             <input
               className={classes.Name}
-              placeholder="Name"
+              placeholder="Escriba aquí el ejercicio"
               required
               onChange={(event) => getExercises(event.target.value)}
             />
             <div>
-            {arrayExercises.length > 0 && searchStatus.hasExercises && <ExercisesList exercises={arrayExercises}/>}
+            {arrayExercises.length > 0 && searchStatus.hasExercises && <ExercisesList exercises={exercises}/>}
             </div>
           </div>
           {/* <div className={classes.button}>

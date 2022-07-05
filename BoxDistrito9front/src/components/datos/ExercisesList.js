@@ -1,62 +1,70 @@
-import classes from "./ExercisesList.module.css"
+import classes from "./ExercisesList.module.css";
+import React, { useState } from "react";
+import { ExerciseDatas } from "./ExerciseDatas";
 
+export const ExercisesList = (props) => {  
+  
+  const [selectedExercise, setExercise] = useState({
+    hasExerciseSelected: false
+  })
 
-export const ExercisesList = (props) => {
+  const [exerciseDatas, setExercisesDatas] = useState([]);
 
-    console.log('esto es lo que llega del props', props)
-
-    var array = [];
-
-    props.exercises.forEach(element => {
-        array.push({name: element.name})
-    });
-    console.log('este es el array', array)
-
-    // const arrayExercises  = array.map((name)=> 
-    // <li>{name}</li>);
-    // ReactDOM.render(
-    //     <ul>{arrayExercises}</ul>,
-    //     document.getElementById('root')
-    // );
+     var arrayWeightDatas = [
+        {
+          id_weight: 0,
+          weight: "",
+          date: "",
+          id_User: 0,
+          id_exercise: 0
+      }
+     ];
+   
+     const getWeight = (e) => {
+      if(e && e !== ''){
+     const bus = 2;
+       setExercise ({
+        hasExerciseSelected: true
+      })
+       fetch("http://localhost:8000/exercises/searchWeight/"+ e + "/" + bus, {
+         method: "GET",
+         headers: {
+           "Content-Type": "application/json",
+         },
+       })
+         .then((res) => res.json())
+         .then((data) => {
+          if(data.data.length > 0){
+            arrayWeightDatas = data.data;
+           setExercisesDatas(arrayWeightDatas);
+           console.log('este es el array', arrayWeightDatas);
+          } else {
+            setExercisesDatas(arrayWeightDatas = []);
+          }
+         });
+        } else {
+          setExercise ({
+            hasExerciseSelected: false
+          })
+        }
+        console.log('este es el arrayweeeeee', arrayWeightDatas)
+     };
 
    
-    //  var weightDatas ={
-    //    date: '',
-    //    weight: ''
-    //  }
-
-    // var weightId = undefined;
-   
-    //  var arrayWeightDatas = [];
-   
-    //  const getWeight = (e) => {
-    //    const bus = 2;
-    //    console.log('esta es la e', e)
-    //    fetch("http://localhost:8000/exercises/searchWeight/"+ e + "/" + bus, {
-    //      method: "GET",
-    //      headers: {
-    //        "Content-Type": "application/json",
-    //      },
-    //    })
-    //      .then((res) => res.json())
-    //      .then((data) => {
-    //        console.log('esta es la data 2', data.data);
-    //        arrayWeightDatas = data.data;
-    //        // data.data.forEach(element => {
-    //        //    arrayWeightDatas = weightDatas.push[{date: element.date, weight: element.weight}]
-    //        // });
-    //        console.log('este es el array', arrayWeightDatas);
-    //      });
-    //  };
-   
-     return (
-        <>
-        <p>Muestro el listado</p>
-<div id="root"></div>
-        {/* <div>{props.exercises}</div> */}
-        {/* <p>{props.exercises.map(name => <h1 key={name}>{name}</h1>)}</p> */}
-        {/* <div>{array.map(name => <h1>{name}</h1>)}</div> */}
-       </>
-     );
+      return (
+        <div className={classes.containerListExercise}>
+      <div className={classes.listExercises}>
+      {props.exercises.map((exercise, index) => (
+        <div>
+          <p className={classes.nameExercises} onClick={() => getWeight(exercise.id_exercise)}key={index}>{exercise.name}</p>
+       
+        </div>
+      ))}
+      </div>
+      <div className={classes.exerciseDatas}>
+        {arrayWeightDatas.length > 0 && selectedExercise.hasExerciseSelected && <ExerciseDatas exercises={exerciseDatas}/>}
+      </div>
+      </div>
+      );
    };
    

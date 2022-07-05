@@ -41,7 +41,7 @@ export function TarifasHorarios() {
       </table>
 
       <h2 className={classes.titulo}>HORARIOS</h2>
-      <table>
+      <table className={classes.tarifa2}>
         <tbody>
           <tr>
             <th>DIA</th>
