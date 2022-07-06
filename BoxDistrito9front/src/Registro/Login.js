@@ -29,24 +29,24 @@ export const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setIdUser(data.id_user);
+        // setIdUser(data.id_user);
         console.log('estos son los datos que nos da el login', data.id_user)
-        setToken(data.token);
+        // setToken(data.token);
         console.log(data.token);
         navigate("/dashboard", { replace: true });
       });
-      if (!idUser) {
-        return (
-          <div>
-            <Spinner/>
-          </div>
-        );
-      }
+      // if (!idUser) {
+      //   return (
+      //     <div>
+      //       <Spinner/>
+      //     </div>
+      //   );
+      // }
   };
   //If you have Token ok and if you don't have it, it returns you to the control panel
   // Si tienes Token ok y si no tienes te devuelve al panel de control
 
-  if (token) return <Navigate to="/dashboard/" replace />;
+  // if (token) return <Navigate to="/dashboard/" replace />;
   return (
     <div >
       <div className={classes.container}>
@@ -80,8 +80,8 @@ export const Login = () => {
           />
           
           <div className={classes.registro}>
-            <p>¿No estás registrado?</p>
-            <Link className={classes.click} to="/register">Pulse aquí</Link>
+            {/* <p>¿No estás registrado?</p> */}
+            <Link to="/register">¿No estás registrado?</Link>
           </div>
           <div>
             <button type="submit" className={classes.button}>
