@@ -1,13 +1,107 @@
-import { useContext } from "react";
+// import classes from "./Dashboard.module.css";
+// import { useSelector } from "react-redux";
+// import { Link } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { loginActions } from "../store/loginSlice";
+// import { Spinner } from "../components/spinner/Spinner";
+
+// export const Dashboard = () => {
+//   const user = useSelector((state) => state.login.login.data.data.info[0]);
+//   const loading = useSelector((state) => state.login.login.loading);
+
+//   const dispatch = useDispatch();
+//   const handleLogOut = () => {
+//     dispatch(loginActions.logOut());
+//   };
+//   return (
+//     <div className={classes.container}>
+//       {loading && (
+//         <div className={classes.spinner}>
+//           <Spinner/>
+//         </div>
+//       )}
+//       {!loading && (
+//         <div >         
+//           {/* aqui borro */}
+//           <div>
+           
+//             <div className={classes.name}>
+//               <h1>
+//                 {user.name} {user.last_name}
+//               </h1>
+//             </div>
+//             <div className={classes.container}>
+//               <div className={classes.primero}>
+
+//                 <div className={classes.phone}>
+//                   <p>{user.birth_date}</p>
+//                 </div>
+//               <div className={classes.phone}>
+//                   <p>{user.phone}</p>
+//                 </div>
+//               </div>
+//               <div className={classes.segundo}>
+//               <div className={classes.email}>
+//                   <p>{user.email}</p>
+//                 </div>
+//               <div className={classes.email}>
+//                   <p>{user.sessions}</p>
+//                 </div>
+//               <div className={classes.email}>
+//                   <p>{user.photo}</p>
+//                 </div>
+//               <div className={classes.email}>
+//                   <p>{user.rol}</p>
+//                 </div>
+//               <div className={classes.email}>
+//                   <p>{user.password}</p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//           <div className={classes.buttons}>
+//             <div className={classes.link}>
+//               <Link className={classes.linkText} to={"/update-profile"}>
+//                 Actualizar Usuario
+//               </Link>
+//             </div>
+//             {/* <div className={classes.link}>
+//               <Link className={classes.linkText} to={"/weigth"}>
+//                 Pesos
+//               </Link>
+//             </div> */}
+//             <div className={classes.link}>
+//               <Link
+//                 className={classes.linkText}
+//                 onClick={handleLogOut}
+//                 to={"/login"}
+//               >
+//                 Logout
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+
+
+
+
+
+
+// import { useContext } from "react";
 import { Fragment } from "react";
-import { Navigate } from "react-router-dom";
-import { AuthContext } from "../components/AuthContext";
+// import { Navigate } from "react-router-dom";
+// import { AuthContext } from "../components/AuthContext";
 import { Link } from "react-router-dom";
 import classes from "./Dashboard.module.css";
 
 export const Dashboard = () => {
-  const { token, setToken } = useContext(AuthContext);
-  if (!token) return <Navigate to="/login" replace />;
+  // const { token, setToken } = useContext(AuthContext);
+  // if (!token) return <Navigate to="/login" replace />;
   return (
     <Fragment>
       <nav className={classes.navegador}>
@@ -138,7 +232,7 @@ export const Dashboard = () => {
             {/* <button className={classes.button} type="submit">Registrarse</button> */}
            
             <button className={classes.button}
-               onClick={() => setToken(undefined)}
+              //  onClick={() => setToken(undefined)}
             >
               Cerrar Sesion
             </button>

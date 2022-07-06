@@ -21,7 +21,7 @@ export const addNewUser = createAsyncThunk(
       });
       return response.json();
     } catch (error) {
-      return rejectWithValue("Failed to fetch, trying to register a new user");
+      return rejectWithValue("Error al obtener, tratando de registrar un nuevo usuario");
     }
   }
 );
@@ -30,7 +30,7 @@ export const signIn = createAsyncThunk(
   "login/signIn",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await fetch(baseURL, {
+      const response = await fetch(baseURL + "/login", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -39,10 +39,31 @@ export const signIn = createAsyncThunk(
       });
       return response.json();
     } catch (error) {
-      return rejectWithValue("Failed to fetch, trying to sign in");
+      return rejectWithValue("No se pudo obtener, intentando iniciar sesión");
     }
   }
 );
+// Esta parte es para probar modificacion del perfil de usuario
+// export const updateUser = createAsyncThunk(
+//     "login/updateProfile",
+//     async (data, { rejectWithValue }) => {
+//       try {
+//         // console.log(baseURL + "/users/updateUser/" + data._id);
+//         // console.log(data)
+//         const response = await fetch(baseURL + "/users/updateUser/" + data.id_User, {
+//           method: "PUT",
+//           body: JSON.stringify(data),
+//           headers: {
+//             "Content-Type": "application/json",
+//             "authorization":"Bearer " + "8b76d2832ccc1c6a4bbabe4a6335c035570df7862d6fbd78f90b88a9d91f8c14"
+//           },
+//         });
+//         return response.json();
+//       } catch (error) {
+//         return rejectWithValue("Error en el perfil");
+//       }
+//     }
+//   );
 
 export const loginSlice = createSlice({
   name: "login",
@@ -83,6 +104,20 @@ export const loginSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
+    // [updateUser.pending]: (state) => {
+    //     state.login.loading = true;
+    //     state.status = "loading";
+    //   },
+    //   [updateUser.fulfilled]: (state, action) => {
+    //     state.login.data = action.payload;
+    //     state.login.loading = false;
+    //     state.status = "succeeded";
+    //   },
+    //   [updateUser.rejected]: (state, action) => {
+    //     state.login.loading = false;
+    //     state.status = "rejected";
+    //     state.error = action.payload;
+    //   },
   },
 });
 

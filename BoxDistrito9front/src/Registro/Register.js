@@ -11,10 +11,7 @@ export const Register = () => {
   const loading = useSelector((state) => state.login.login.loading);
   const status = useSelector((state) => state.login.status);
   const error = useSelector((state) => state.login.error);
-  // const [registerStatus, setRegisterStatus] = useState({
-  //   isLoading: false,
-  //   isRegistered: false
-  // })
+
   const [formValues, setFormValues] = useState({
     name: "",
     last_name: "",
@@ -46,62 +43,9 @@ export const Register = () => {
         password: "",
       });
     });
-    // setRegisterStatus({
-    //   isLoading: true,
-    //   isRegistered: false,
-    //   error: null
-    // })
-    // fetch("http://localhost:8000/users/insertUser", {
-    //   method: "POST",
-    //   body: JSON.stringify(formValues),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //     if(data.data.affectedRows>0){
-    //       setRegisterStatus({
-    //         isLoading: false,
-    //         isRegistered: true,
-    //         error:null
-    //       })
-    //       setFormValues({
-    //         name: "",
-    //         last_name: "",
-    //         birth_date: "",
-    //         phone: "",
-    //         email: "",
-    //         sessions: "",
-    //         photo: "",
-    //         rol: "basic",
-    //         password: "",
-    //       });
-    //     }
 
-    //   }).catch((error)=>{
-    //     setRegisterStatus({
-    //       isLoading: false,
-    //       isRegistered: false,
-    //       error:error.message
-    //     })
-    //     setFormValues({
-    //       name: "",
-    //       last_name: "",
-    //       birth_date: "",
-    //       phone: "",
-    //       email: "",
-    //       sessions: "",
-    //       photo: "",
-    //       rol: "basic",
-    //       password: "",
-    //     });
-    //   })
   };
-  // useEffect(()=>{
 
-  // },[registerStatus])
   return (
     <div className={classes.contenedor}>
       {loading && <Spinner />}
