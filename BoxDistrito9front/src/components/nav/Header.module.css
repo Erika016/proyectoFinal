@@ -9,7 +9,7 @@
     color: white;
     margin-bottom: 1.2em;
     padding: 2em;
-    height: 15vh;
+    height: 30vh;
   }
   .container nav ul{
     display: flex;
@@ -37,6 +37,36 @@
     font-size: wallpoet;
     background-color: var(--red);
   }
+  
+  
+  
+  
+  .logo{
+    max-width: 280px;
+    height: auto;
+    padding: 1.5em;
+  }
+
+.redes{
+    max-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 1.2em;
+    margin: .8em;
+    transition: all 2s ease;
+  }
+  .face:hover{
+    font-size: 1.5em;
+    color: blue;
+  }
+  .insta:hover{
+    font-size: 1.5em;
+    color: orange;
+  }
+  .what:hover{
+    font-size: 1.5em;
+    color: greenyellow;
+  }
   @media (max-width: 1260px){
    
     .container nav ul{
@@ -50,34 +80,9 @@
     .container nav li{
       margin: 0.3em;
     }
+    .logo{
+      max-width: 180px;
+      height: auto;
+      padding: 1.5em;
+  }
     }
-
-
-
-
-.logo{
-    max-width: 180px;
-    height: auto;
-    padding: 1.5em;
-}
-
-.redes{
-    max-width: 50px;
-    font-size: 40px;
-    cursor: pointer;
-    padding: 1.2em;
-    margin: .8em;
-    transition: all 2s ease;
-}
-.face:hover{
-    font-size: 1.5em;
-    color: blue;
-}
-.insta:hover{
-    font-size: 1.5em;
-    color: orange;
-}
-.what:hover{
-    font-size: 1.5em;
-    color: greenyellow;
-}

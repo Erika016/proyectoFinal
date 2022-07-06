@@ -1,16 +1,16 @@
 //import components, tools and css
 import { Link } from "react-router-dom";
 import { useNavigate, Navigate } from "react-router-dom";
-import { AuthContext } from "../components/AuthContext";
-import { useContext, useState } from "react";
+// import { AuthContext } from "../components/AuthContext";
+import {useState } from "react";
 import classes from "./Login.module.css";
 import {Spinner} from "../components/spinner/Spinner";
 
 export const Login = () => {
   //navigate, usecontext and form tools
   const navigate = useNavigate();
-  const { token, setToken } = useContext(AuthContext);
-  const [idUser, setIdUser] =useState([]);
+  // const { token, setToken } = useContext(AuthContext);
+  // const [idUser, setIdUser] =useState([]);
   const [formValues, setFormValues] = useState({ email: "", password: "" });
   const handleInputChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
