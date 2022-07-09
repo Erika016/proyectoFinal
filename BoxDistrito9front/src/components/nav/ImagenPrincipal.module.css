@@ -3,7 +3,7 @@
   width: 100vw;
   height: 60vh;
   align-items: center;
-  aspect-ratio: 50/0;
+  background-size: contain;
 }
 /* @media (min-width: 900px) {
   .imagen {
